@@ -1,0 +1,148 @@
+<script>
+  var questions = [
+    {
+      questionNumber: 0,
+      questionTitle: "Count triplets with sum smaller than a given value",
+      questionDis:
+        "Given an array of distinct integers and a sum value. Find count of triplets with sum smaller than given sum value. Expected Time Complexity is O(n^2).",
+      questionExp: "ggwp/0.jpg"
+    },
+
+    {
+      questionNumber: 1,
+      questionTitle: "Convert array into Zig-Zag fashion",
+      questionDis:
+        "Given an array of DISTINCT elements, rearrange the elements of array in zig-zag fashion in O(n) time. The converted array should be in form a < b > c < d > e < f.",
+      questionExp: "ggwp/1.jpg"
+    },
+
+    {
+      questionNumber: 2,
+      questionTitle: "Stock Buy Sell to Maximize Profit",
+      questionDis:
+        "The cost of a stock on each day is given in an array, find the max profit that you can make by buying and selling in those days. For example, if the given array is {100, 180, 260, 310, 40, 535, 695}, the maximum profit can earned by buying on day 0, selling on day 3. Again buy on day 4 and sell on day 6. If the given array of prices is sorted in decreasing order, then profit cannot be earned at all.",
+      questionExp: ""
+    },
+
+    {
+      questionNumber: 3,
+      questionTitle:
+        "Given a sorted array and a number x, find the pair in array whose sum is closest to x",
+      questionDis:
+        "A simple solution is to consider every pair and keep track of closest pair (absolute difference between pair sum and x is minimum). Finally print the closest pair. Time complexity of this solution is O(n2). An efficient solution can find the pair in O(n) time.The idea is similar to method 2 of this post.Following is detailed algorithm.",
+      questionExp: "ggwp/3.jpg"
+    }
+  ];
+</script>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Dashboard</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarColor02"
+    aria-controls="navbarColor02"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+
+    <a href="/users/logout" class="btn btn-secondary my-2 my-sm-0">Logout</a>
+  </div>
+</nav> -->
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Dashboard</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="!#">About</a></li>
+      <li><a href="#">Scores</a></li>
+      <li><a href="/users/logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<br />
+<br />
+
+<!-- <h1 class="mt-4">Dashboard</h1> -->
+<p class="lead mb-3">Welcome <%= user.name %></p>
+
+<!-- <p class="lead mb-3">Welcome <%= user.email %></p> -->
+
+<!-- <form action="/api/images" method="post" enctype="multipart/form-data">
+  <input type="file" name="image" />
+</form> -->
+<div class="collection">
+  <h4>question 1: <span id="q-title-0"> </span></h4>
+  <p id="q-dis-0" class="collection-item"></p>
+  <img src="" id="q-img-0" />
+
+  <br />
+  <br />
+
+  <h4>question 2: <span id="q-title-1"> </span></h4>
+  <p id="q-dis-1" class="collection-item"></p>
+  <img src="" id="q-img-1" />
+
+  <br />
+  <br />
+
+  <h4>question 3: <span id="q-title-2"> </span></h4>
+  <p id="q-dis-2" class="collection-item"></p>
+  <img src="" id="q-img-2" />
+
+  <br />
+  <br />
+
+  <h4>question 4: <span id="q-title-3"> </span></h4>
+  <p id="q-dis-3" class="collection-item"></p>
+  <img src="" id="q-img-3" />
+</div>
+
+<br />
+<br />
+<br />
+<br />
+
+<form action="/upload" enctype="multipart/form-data" method="POST">
+  <input type="file" name="myFile" />
+  <br />
+  <br />
+  <input
+    type="submit"
+    value="Upload a file"
+    class="btn btn-secondary my-2 my-sm-0"
+  />
+</form>
+<br />
+<br />
+<br />
+<br />
+
+<script>
+  console.log(questions.length);
+  for (var i = 0; i < questions.length; i++) {
+    document.getElementById("q-title-" + i).innerHTML =
+      questions[i].questionTitle;
+    document.getElementById("q-dis-" + i).innerHTML = questions[i].questionDis;
+
+    if (questions[i].questionExp === "") {
+      document.getElementById("q-img-" + i).style.display = "none";
+    } else {
+      document
+        .getElementById("q-img-" + i)
+        .setAttribute("src", questions[i].questionExp);
+    }
+  }
+</script>
